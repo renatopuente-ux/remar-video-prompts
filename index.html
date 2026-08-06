@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prompts visuales · Video REMAR</title>
+<title>Storyboard · Video Interno Emotivo — Fundación REMAR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300..1000;1,300..1000&display=swap" rel="stylesheet">
 <style>
@@ -15,241 +15,190 @@
   --neu-in:inset 3px 3px 8px rgba(163,177,198,.45), inset -3px -3px 8px rgba(255,255,255,.9);
 }
 body{ background:var(--bg); color:var(--ink); padding:36px 24px 80px; }
-.wrap{ max-width:1180px; margin:0 auto; }
-header{ text-align:center; margin-bottom:28px; }
+.wrap{ max-width:1240px; margin:0 auto; }
+header{ text-align:center; margin-bottom:30px; }
 header .chip{ display:inline-block; padding:6px 16px; border-radius:999px; background:var(--bg); box-shadow:var(--neu);
   font-size:12px; font-weight:800; letter-spacing:1.4px; text-transform:uppercase; color:var(--indigo); }
-header h1{ font-size:clamp(23px,4vw,32px); font-weight:800; color:var(--navy); margin-top:14px; letter-spacing:-.5px; }
-header .sub{ font-size:14px; color:var(--muted); margin-top:6px; }
-.meta{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:14px; }
-.meta span{ font-size:12px; font-weight:800; color:var(--navy); background:var(--bg); box-shadow:var(--neu); padding:6px 13px; border-radius:10px; }
+header h1{ font-size:clamp(24px,4vw,34px); font-weight:800; color:var(--navy); margin-top:14px; letter-spacing:-.5px; }
+header .sub{ font-size:14.5px; color:var(--muted); margin-top:6px; max-width:720px; margin-left:auto; margin-right:auto; line-height:1.6; }
+.meta{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:16px; }
+.meta span{ font-size:12.5px; font-weight:800; color:var(--navy); background:var(--bg); box-shadow:var(--neu); padding:7px 14px; border-radius:10px; }
 
-.base{ background:var(--bg); border-radius:18px; box-shadow:var(--neu); padding:20px 22px; margin-bottom:28px; }
-.base .bt{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
-.base h2{ font-size:15px; font-weight:800; color:var(--navy); }
-.base .note{ font-size:12.5px; color:var(--muted); margin-top:10px; }
-.base .note b{ color:var(--orange-text); }
+.vo-intro{ background:var(--bg); border-radius:18px; box-shadow:var(--neu); padding:20px 24px; margin-bottom:30px; }
+.vo-intro h2{ font-size:16px; font-weight:800; color:var(--navy); margin-bottom:8px; }
+.vo-intro p{ font-size:13.5px; color:var(--muted); line-height:1.65; }
+.vo-intro b{ color:var(--ink); }
 
-.promptbox{ position:relative; background:#F4F6FB; border-radius:12px; box-shadow:var(--neu-in);
-  padding:13px 110px 13px 15px; font-size:13px; line-height:1.6; color:var(--ink); }
-.copybtn{
-  position:absolute; top:10px; right:10px; border:none; cursor:pointer; border-radius:999px;
-  padding:7px 14px; font-size:12px; font-weight:800; background:var(--navy); color:#fff;
-  transition:background .15s, transform .05s;
-}
-.copybtn:hover{ transform:translateY(-1px); }
-.copybtn.ok{ background:#1B5E20; }
+.grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+@media (max-width:960px){ .grid{ grid-template-columns:1fr; } }
+.frame{ background:var(--bg); border-radius:22px; box-shadow:var(--neu); overflow:hidden; display:flex; flex-direction:column; }
+.frame .head{ display:flex; align-items:center; gap:10px; padding:15px 20px 11px; }
+.frame .num{ width:30px; height:30px; border-radius:9px; background:var(--navy); color:#fff; display:grid; place-items:center; font-weight:800; font-size:13px; flex:none; }
+.frame .t{ font-size:16px; font-weight:800; color:var(--navy); }
+.frame .tc{ margin-left:auto; font-size:12px; font-weight:800; color:var(--orange-text); background:rgba(222,94,45,.1); padding:4px 11px; border-radius:999px; white-space:nowrap; }
 
-.grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
-@media (max-width:900px){ .grid{ grid-template-columns:1fr; } .promptbox{ padding-right:15px; padding-bottom:44px; } }
-.card{ background:var(--bg); border-radius:20px; box-shadow:var(--neu); overflow:hidden; display:flex; flex-direction:column; }
-.card .head{ display:flex; align-items:center; gap:10px; padding:14px 18px 10px; }
-.card .num{ width:28px; height:28px; border-radius:9px; background:var(--navy); color:#fff; display:grid; place-items:center; font-weight:800; font-size:12.5px; flex:none; }
-.card .t{ font-size:15px; font-weight:800; color:var(--navy); }
-.card .tc{ margin-left:auto; font-size:11.5px; font-weight:800; color:var(--orange-text); background:rgba(222,94,45,.1); padding:4px 10px; border-radius:999px; white-space:nowrap; }
-.sk{ margin:2px 16px 0; border-radius:12px; background:#F4F6FB; box-shadow:var(--neu-in); }
-.sk svg{ display:block; width:100%; height:auto; }
-.card .body{ padding:12px 16px 16px; display:flex; flex-direction:column; gap:10px; flex:1; }
-.slot{ border:2px dashed rgba(47,95,204,.35); border-radius:12px; padding:9px 12px; font-size:12px; color:var(--indigo); font-weight:700; text-align:center; }
+.imgbox{ margin:2px 18px 0; border-radius:14px; overflow:hidden; box-shadow:var(--neu-in); background:#F4F6FB; aspect-ratio:16/9; position:relative; }
+.imgbox img{ display:block; width:100%; height:100%; object-fit:cover; }
+.imgbox .pend{ display:none; position:absolute; inset:0; place-items:center; text-align:center; padding:20px;
+  font-size:13px; font-weight:700; color:var(--indigo); }
+.imgbox.missing img{ display:none; }
+.imgbox.missing .pend{ display:grid; }
+.brandcard{ background:#151F47; display:grid; place-items:center; }
+.brandcard .in{ text-align:center; padding:24px; }
+.brandcard .cl{ font-size:clamp(17px,2.4vw,24px); font-weight:800; color:#fff; letter-spacing:-.3px; }
+.brandcard .s2{ font-size:12.5px; color:rgba(255,255,255,.75); font-weight:700; margin-top:8px; }
+.brandcard .btn{ display:inline-block; margin-top:14px; background:var(--orange); color:#fff; font-size:12px; font-weight:800; padding:9px 20px; border-radius:999px; }
+.brandcard .logos{ display:flex; gap:14px; justify-content:center; margin-top:16px; }
+.brandcard .logos span{ background:rgba(255,255,255,.22); border-radius:5px; padding:4px 14px; font-size:9px; font-weight:800; color:#fff; letter-spacing:.6px; }
 
-.nofoto{ display:flex; flex-direction:column; justify-content:center; align-items:center; gap:10px; padding:34px 22px; text-align:center; }
-.nofoto .big{ font-size:15px; font-weight:800; color:var(--navy); }
-.nofoto p{ font-size:13px; color:var(--muted); line-height:1.6; max-width:380px; }
+.body{ padding:14px 20px 18px; }
+.narr{ font-size:13.5px; color:var(--ink); line-height:1.6; background:rgba(47,95,204,.07); border-left:3px solid var(--indigo); border-radius:0 10px 10px 0; padding:9px 13px; margin-bottom:11px; font-weight:600; }
+.vo{ display:flex; gap:9px; margin-bottom:11px; }
+.vo .mic{ flex:none; font-size:15px; padding-top:2px; }
+.vo p{ font-size:14.5px; line-height:1.6; color:var(--ink); font-style:italic; font-weight:600; }
+.row{ display:flex; gap:8px; font-size:13px; line-height:1.55; margin-top:6px; }
+.row .k{ flex:none; width:82px; font-weight:800; color:var(--indigo); font-size:10.5px; letter-spacing:.5px; text-transform:uppercase; padding-top:2px; }
+.row .v{ color:var(--muted); }
+.row .v b{ color:var(--ink); }
 
-footer{ text-align:center; margin-top:28px; font-size:12px; color:rgba(0,9,51,.45); line-height:1.7; }
-
-.lin{ stroke:#151F47; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-.acc{ stroke:#DE5E2D; stroke-width:2; fill:none; stroke-linecap:round; }
-.ph{ stroke:#8A93B0; stroke-width:1.5; stroke-dasharray:5 4; fill:rgba(138,147,176,.06); }
-.lbl{ font:700 8.5px 'Nunito',sans-serif; fill:#8A93B0; letter-spacing:.4px; }
-.soft{ fill:rgba(21,31,71,.12); }
+.notes{ margin-top:34px; background:var(--bg); border-radius:20px; box-shadow:var(--neu); padding:24px 28px; }
+.notes h2{ font-size:17px; font-weight:800; color:var(--navy); margin-bottom:10px; }
+.notes li{ font-size:13.5px; color:var(--muted); line-height:1.7; margin-left:18px; }
+.notes b{ color:var(--ink); }
+.warn{ border-left:4px solid var(--orange); padding-left:14px; margin-top:14px; }
+footer{ text-align:center; margin-top:30px; font-size:12px; color:rgba(0,9,51,.45); line-height:1.7; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <header>
-  <span class="chip">Prompts de imagen · Video REMAR</span>
-  <h1>Video Interno Emotivo — REMAR · frames a generar</h1>
-  <p class="sub">Copia cada prompt (ya incluye la base de estilo) y genera en tu plataforma. Las imágenes vuelven aquí como style frames.</p>
-  <div class="meta"><span>16:9</span><span>≥1920×1080</span><span>Estilo documental cálido</span><span>Sin rostros de niños</span><span>MJ: --ar 16:9 --style raw</span></div>
+  <span class="chip">Storyboard v2 · frames generados + guion con locución</span>
+  <h1>Video Interno Emotivo — Fundación REMAR</h1>
+  <p class="sub">Campaña "Apadrina a un niño": kit escolar + carta de cariño. El video se envía a los colaboradores de Actuaria junto al link de la encuesta de apadrinamiento.</p>
+  <div class="meta">
+    <span>⏱ ~78 s</span><span>16:9</span><span>🎙 Con voz en off + subtítulos</span><span>8 escenas</span><span>Cierre: CREE + ACTÚA</span>
+  </div>
 </header>
 
-<section class="base">
-  <div class="bt"><h2>Base de estilo</h2><span style="font-size:12px;color:var(--muted);">— incluida automáticamente en el botón "Copiar" de cada escena</span></div>
-  <div class="promptbox" id="pb-base">Warm cinematic documentary photography, golden hour natural light, shallow depth of field, hopeful and tender mood, muted warm color palette with soft orange accents, Ecuador Andean highlands context, no visible faces, photorealistic, 16:9<button class="copybtn" data-copy="pb-base">Copiar base</button></div>
-  <p class="note"><b>Regla ética:</b> ningún prompt genera rostros de niños — ni sintéticos. Manos, espaldas, objetos y metáforas.</p>
+<section class="vo-intro">
+  <h2>🎙 Locución</h2>
+  <p>Voz cálida y cercana (femenina, LATAM neutro — candidata ideal: la coordinadora del hogar, por autenticidad), ritmo pausado sobre piano con crescendo en la escena 6. El <b>texto en pantalla es de apoyo</b> (frases clave), no duplica la locución. El video lleva <b>subtítulos</b>: parte del equipo lo verá sin audio. <b>En esta versión compartible los niños aparecen por su inicial</b>; los nombres completos constan en el guion interno de producción.</p>
 </section>
 
 <div class="grid">
 
-  <section class="card">
+  <section class="frame">
     <div class="head"><span class="num">1</span><span class="t">El recuerdo</span><span class="tc">0:00–0:07</span></div>
-    <div class="sk"><svg viewBox="0 0 320 150">
-      <rect x="12" y="10" width="296" height="130" rx="8" class="ph"/>
-      <path class="lin" d="M90 112 L160 100 L230 112 L230 70 L160 58 L90 70 Z M160 58 L160 100"/>
-      <path class="lin" d="M104 78 L146 72 M104 88 L146 82 M174 72 L216 78 M174 82 L216 88" opacity=".45"/>
-      <g transform="rotate(-18 70 60)"><rect x="62" y="30" width="9" height="46" rx="2" class="lin"/><path class="acc" d="M62 76 L66.5 86 L71 76"/></g>
-      <g transform="rotate(12 250 52)"><rect x="246" y="28" width="9" height="46" rx="2" class="lin"/><path class="acc" d="M246 74 L250.5 84 L255 74"/></g>
-      <circle cx="160" cy="34" r="9" class="acc"/>
-    </svg></div>
+    <div class="imgbox"><img src="frames/esc1-recuerdo.jpg" alt="Útiles escolares con luz cálida" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc1-recuerdo.jpg</div></div>
     <div class="body">
-      <div class="promptbox" id="pb-1">Extreme close-up macro of brand new school supplies on a wooden desk: colored pencils, an open blank notebook with crisp pages, a small sharpener, soft morning light streaming across, nostalgic first-day-of-school feeling<button class="copybtn" data-copy="pb-1" data-base="1">Copiar</button></div>
-      <div class="slot">📥 pega aquí la imagen generada → <b>esc1-recuerdo.jpg</b></div>
+      <div class="narr">Abrimos en el recuerdo del espectador: todos fuimos ese niño con útiles nuevos. La empatía nace de su propia memoria, no de la lástima.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"¿Recuerdas la emoción de estrenar útiles… un primer día de clases?"</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v">"¿Recuerdas esa emoción?"</span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Fade desde negro; paneo macro lento; texto en 2 tiempos. Piano entra desde silencio.</span></div>
     </div>
   </section>
 
-  <section class="card">
+  <section class="frame">
     <div class="head"><span class="num">2</span><span class="t">El hogar</span><span class="tc">0:07–0:15</span></div>
-    <div class="sk"><svg viewBox="0 0 320 150">
-      <rect x="12" y="10" width="296" height="130" rx="8" class="ph"/>
-      <path class="lin" d="M20 105 L80 58 L120 90 L170 45 L230 105" opacity=".5"/>
-      <circle cx="248" cy="42" r="13" class="acc"/>
-      <path class="lin" d="M110 130 L110 90 L150 66 L190 90 L190 130 Z"/>
-      <rect x="140" y="104" width="20" height="26" class="lin"/>
-      <rect x="118" y="96" width="14" height="11" class="lin"/><rect x="168" y="96" width="14" height="11" class="lin"/>
-    </svg></div>
+    <div class="imgbox"><img src="frames/esc2-hogar.jpg" alt="Hogar andino al amanecer con columpio" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc2-hogar.jpg</div></div>
     <div class="body">
-      <div class="promptbox" id="pb-2">Modest but welcoming children's home exterior at sunrise in the Andean highlands near Quito, small courtyard with a swing, mountains in the background, warm light hitting the facade, sense of shelter and new beginnings<button class="copybtn" data-copy="pb-2" data-base="1">Copiar</button></div>
-      <div class="slot">📥 <b>esc2-hogar.jpg</b></div>
+      <div class="narr">Del recuerdo íntimo a un lugar real: el hogar en la Mitad del Mundo. El columpio vacío y el "Bienvenidos" dicen refugio sin explicarlo.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"En la Mitad del Mundo hay un hogar donde veinticinco historias comienzan de nuevo: la Fundación REMAR, más de treinta años cuidando a la niñez."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v">Chip: <b>Fundación REMAR Mitad del Mundo · +30 años por la niñez</b></span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Ken Burns suave hacia la puerta abierta; chip sube desde abajo.</span></div>
     </div>
   </section>
 
-  <section class="card">
+  <section class="frame">
     <div class="head"><span class="num">3</span><span class="t">Las realidades</span><span class="tc">0:15–0:25</span></div>
-    <div class="sk"><svg viewBox="0 0 320 150">
-      <rect x="12" y="10" width="296" height="130" rx="8" class="ph"/>
-      <path class="lin" d="M30 32 L290 32" opacity=".5"/>
-      <g class="lin"><path d="M60 32 L60 44"/><rect x="45" y="44" width="30" height="36" rx="8"/><path d="M50 54 h20"/></g>
-      <g class="lin"><path d="M130 32 L130 44"/><rect x="115" y="44" width="30" height="36" rx="8"/><path d="M120 54 h20"/></g>
-      <g class="acc"><path d="M200 32 L200 44"/><rect x="185" y="44" width="30" height="36" rx="8"/><path d="M190 54 h20"/></g>
-      <g class="lin"><path d="M268 32 L268 44"/><rect x="253" y="44" width="30" height="36" rx="8"/><path d="M258 54 h20"/></g>
-      <path class="lin" d="M92 128 q0 -10 10 -10 h12 q10 0 12 10 Z M126 128 q0 -10 10 -10 h12 q10 0 12 10 Z" opacity=".6"/>
-    </svg></div>
+    <div class="imgbox"><img src="frames/esc3-mochilas.jpg" alt="Mochilas colgadas y zapatos escolares en fila" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc3-mochilas.jpg</div></div>
     <div class="body">
-      <div class="promptbox" id="pb-3">A row of small children's backpacks hanging on wall hooks in a hallway, one bright orange backpack among neutral ones, below them several pairs of small worn school shoes neatly lined up, empty classroom chairs softly blurred in background, quiet dignity<button class="copybtn" data-copy="pb-3" data-base="1">Copiar</button></div>
-      <div class="slot">📥 <b>esc3-mochilas.jpg</b></div>
+      <div class="narr">La realidad contada con objetos: presencia a través de la ausencia. Cada mochila es un niño; la naranja guía el ojo (y la marca).</div>
+      <div class="vo"><span class="mic">🎙</span><p>"Algunos de estos niños perdieron a sus padres. Otros no pueden estar con ellos. Hoy, diecisiete estudian gracias a este hogar."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v"><b>17 niños y adolescentes</b> estudian hoy</span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Travelling lateral lento por las mochilas; el contador "17" sube con la locución.</span></div>
     </div>
   </section>
 
-  <section class="card">
-    <div class="head"><span class="num">4</span><span class="t">El pequeño futbolista</span><span class="tc">0:25–0:37</span></div>
-    <div class="sk"><svg viewBox="0 0 320 150">
-      <rect x="12" y="10" width="296" height="130" rx="8" class="ph"/>
-      <g class="lin"><circle cx="95" cy="46" r="11"/><path d="M95 57 L95 90 M95 66 L79 78 M95 66 L111 74 M95 90 L83 116 M95 90 L111 112"/></g>
-      <circle cx="132" cy="120" r="11" class="acc"/><path class="acc" d="M125 113 l14 14 M139 113 l-14 14" opacity=".6"/>
-      <rect x="200" y="48" width="76" height="52" rx="4" class="lin"/>
-      <path class="lin" d="M208 62 h60 M208 74 h60 M208 86 h42" opacity=".45"/>
-      <text x="238" y="40" text-anchor="middle" class="lbl">CUADERNO DE PLANAS</text>
-    </svg></div>
+  <section class="frame">
+    <div class="head"><span class="num">4</span><span class="t">C. · 8 años</span><span class="tc">0:25–0:37</span></div>
+    <div class="imgbox"><img src="frames/esc4-futbolista.jpg" alt="Niño de espaldas pateando un balón; cuaderno de planas en primer plano" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc4-futbolista.jpg</div></div>
     <div class="body">
-      <div class="promptbox" id="pb-4">An 8-year-old boy seen entirely from behind, kicking a football in a sunlit courtyard, wearing a simple t-shirt, motion blur on the ball, in the foreground a school notebook with handwriting practice pages lies open on a bench<button class="copybtn" data-copy="pb-4" data-base="1">Copiar</button></div>
-      <div class="slot">📥 <b>esc4-futbolista.jpg</b></div>
+      <div class="narr">Primera historia con nombre. El cuaderno con estrellas y "¡Muy bien!" en primer plano ES su superación; el balón al fondo, su sueño.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"C. tiene ocho años. Hace uno, no sabía leer ni escribir. Hoy pasa a tercero de básica… y sueña con ser futbolista."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v">8 años · pasa a <b>3.º de básica</b> ⚽</span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Foco pasa del cuaderno (nítido) al niño (fondo); el ⚽ del texto rebota al entrar.</span></div>
     </div>
   </section>
 
-  <section class="card">
-    <div class="head"><span class="num">5</span><span class="t">El rompecabezas</span><span class="tc">0:37–0:48</span></div>
-    <div class="sk"><svg viewBox="0 0 320 150">
-      <rect x="12" y="10" width="296" height="130" rx="8" class="ph"/>
-      <g class="lin">
-        <path d="M120 52 h24 v10 a6 6 0 0 0 0 12 v10 h-24 v-10 a6 6 0 0 1 0 -12 Z"/>
-        <path d="M152 52 h24 v32 h-24 v-10 a6 6 0 0 0 0 -12 Z"/>
-      </g>
-      <path class="acc" d="M120 92 h24 v10 a6 6 0 0 0 0 12 v10 h-24 Z"/>
-      <g class="lin" opacity=".5" transform="translate(196 98) rotate(14)"><path d="M0 0 h22 v20 h-22 Z"/></g>
-      <g class="lin"><circle cx="70" cy="94" r="10"/><path d="M70 104 v18 M70 110 l-10 8 M70 110 l10 8 M70 122 l-8 13 M70 122 l8 13"/><path d="M62 88 q8 -9 16 0" opacity=".6"/></g>
-    </svg></div>
+  <section class="frame">
+    <div class="head"><span class="num">5</span><span class="t">D. · 4 años</span><span class="tc">0:37–0:48</span></div>
+    <div class="imgbox"><img src="frames/esc5-rompecabezas.jpg" alt="Manos de niña colocando la última pieza de un rompecabezas de sol; muñeca andina al lado" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc5-rompecabezas.jpg</div></div>
     <div class="body">
-      <div class="promptbox" id="pb-5">Small child's hands (only hands visible) placing the last piece of a colorful wooden jigsaw puzzle on a low table, a soft rag doll sitting beside the puzzle, pieces coming together forming a bright sun shape, warm window light<button class="copybtn" data-copy="pb-5" data-base="1">Copiar</button></div>
-      <div class="slot">📥 <b>esc5-rompecabezas.jpg</b></div>
+      <div class="narr">El corazón del video: su vida rearmándose pieza a pieza. La última pieza del sol entra exactamente cuando la locución dice "por primera vez".</div>
+      <div class="vo"><span class="mic">🎙</span><p>"D. tiene cuatro. Llegó hace poco con sus tres hermanitas. Este año empieza la escuela… por primera vez."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v">4 años · <b>su primer año escolar</b></span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Las piezas encajan una a una (stop-motion sutil); este frame es la resolución.</span></div>
     </div>
   </section>
 
-  <section class="card">
-    <div class="head"><span class="num">6</span><span class="t">La dignidad · galletas</span><span class="tc">0:48–0:58</span></div>
-    <div class="sk"><svg viewBox="0 0 320 150">
-      <rect x="12" y="10" width="296" height="130" rx="8" class="ph"/>
-      <rect x="80" y="76" width="160" height="42" rx="6" class="lin"/>
-      <circle cx="110" cy="97" r="10" class="lin"/><circle cx="145" cy="97" r="10" class="acc"/>
-      <circle cx="180" cy="97" r="10" class="lin"/><circle cx="212" cy="97" r="10" class="lin"/>
-      <path class="lin" d="M130 62 q-5 -8 0 -16 M160 64 q5 -8 0 -16 M190 62 q-5 -8 0 -16" opacity=".45"/>
-      <path class="lin" d="M60 124 q14 -14 30 -6 M260 124 q-14 -14 -30 -6" opacity=".7"/>
-      <text x="160" y="40" text-anchor="middle" class="lbl">APLANCHADOS · BIZCOCHITOS · CHABELITAS · MELVAS</text>
-    </svg></div>
+  <section class="frame">
+    <div class="head"><span class="num">6</span><span class="t">La dignidad · las galletas</span><span class="tc">0:48–0:58</span></div>
+    <div class="imgbox"><img src="frames/esc6-galletas.jpg" alt="Manos adultas y pequeñas amasando juntas; bandeja humeante" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc6-galletas.jpg</div></div>
     <div class="body">
-      <div class="promptbox" id="pb-6">Adult and child hands (only hands) working together kneading dough in a humble warm kitchen, a metal tray of traditional Ecuadorian cookies fresh from the oven with gentle steam, flour dust in the light, artisanal honest work<button class="copybtn" data-copy="pb-6" data-base="1">Copiar</button></div>
-      <div class="slot">📥 <b>esc6-galletas.jpg</b></div>
+      <div class="narr">Cuatro manos amasando juntas: no piden, trabajan. El giro del video — la ayuda no es caridad, es sumarse a un esfuerzo que ya existe.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"Para sostener el hogar, hornean y venden galletas tradicionales. Hacen todo lo que pueden… pero no tienen que hacerlo solos."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v">aplanchados · bizcochitos · chabelitas · melvas <em>(etiquetas)</em></span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Etiquetas aparecen al ritmo de la locución; la música crece (entra cuerda).</span></div>
     </div>
   </section>
 
-  <section class="card">
+  <section class="frame">
     <div class="head"><span class="num">7</span><span class="t">La propuesta</span><span class="tc">0:58–1:10</span></div>
-    <div class="sk"><svg viewBox="0 0 320 150">
-      <rect x="12" y="10" width="296" height="130" rx="8" class="ph"/>
-      <g class="acc"><rect x="60" y="52" width="52" height="60" rx="14"/><path d="M70 68 h32 M76 52 q10 -14 20 0"/></g>
-      <g class="lin"><rect x="132" y="60" width="34" height="42" rx="3"/><path d="M138 72 h22 M138 82 h22 M138 92 h14" opacity=".5"/></g>
-      <g class="lin" transform="rotate(20 190 74)"><rect x="186" y="52" width="7" height="38" rx="2"/></g>
-      <g class="lin"><rect x="216" y="66" width="58" height="38" rx="4"/><path d="M216 70 l29 19 29 -19"/></g>
-      <path class="acc" d="M244 112 q8 10 18 6" opacity=".8"/>
-      <text x="160" y="40" text-anchor="middle" class="lbl">KIT ESCOLAR + CARTA ESCRITA A MANO</text>
-    </svg></div>
+    <div class="imgbox"><img src="frames/esc7-kit.jpg" alt="Kit escolar completo y manos de niño sosteniendo una carta" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc7-kit.jpg</div></div>
     <div class="body">
-      <div class="promptbox" id="pb-7">Overhead flat lay of a complete school kit being assembled: an orange backpack, notebooks, pencils, crayons, a pencil case, and beside it an adult hand writing a heartfelt handwritten letter with a pen on cream paper, act of care and generosity<button class="copybtn" data-copy="pb-7" data-base="1">Copiar</button></div>
-      <div class="slot">📥 <b>esc7-kit.jpg</b></div>
+      <div class="narr">El payoff: el kit en paleta Actuaria y unas manos pequeñas ya recibiendo la carta — el espectador ve el resultado de su gesto antes de hacerlo.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"Este regreso a clases, apadrina a uno de ellos: un kit escolar completo, y una carta escrita por ti. Tu letra puede ser el primer 'alguien piensa en mí' que reciba."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v"><b>KIT ESCOLAR + TU CARTA</b></span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Los útiles se ordenan hacia la mochila; la carta es lo último en aparecer, sostenida.</span></div>
     </div>
   </section>
 
-  <section class="card">
+  <section class="frame">
     <div class="head"><span class="num">8</span><span class="t">CTA · Cree y Actúa</span><span class="tc">1:10–1:18</span></div>
-    <div class="sk"><svg viewBox="0 0 320 150">
-      <rect x="12" y="10" width="296" height="130" rx="8" fill="#151F47"/>
-      <text x="160" y="62" text-anchor="middle" style="font:800 15px 'Nunito';fill:#fff">Cree en ellos. Actúa por ellos.</text>
-      <rect x="112" y="78" width="96" height="20" rx="10" fill="#DE5E2D"/>
-      <text x="160" y="92" text-anchor="middle" style="font:800 9px 'Nunito';fill:#fff">IR A LA ENCUESTA →</text>
-      <rect x="94" y="112" width="58" height="12" rx="4" fill="rgba(255,255,255,.25)"/>
-      <rect x="168" y="112" width="58" height="12" rx="4" fill="rgba(255,255,255,.25)"/>
-    </svg></div>
-    <div class="body nofoto">
-      <span class="big">Sin imagen que generar</span>
-      <p>Esta escena es la tarjeta de marca: fondo navy, claim, botón de encuesta y logos Actuaria + REMAR. Se produce 100% en motion graphics.</p>
+    <div class="imgbox brandcard">
+      <div class="in">
+        <div class="cl">Cree en ellos. Actúa por ellos.</div>
+        <div class="s2">Responde la encuesta y conviértete en padrino o madrina 💙</div>
+        <span class="btn">IR A LA ENCUESTA →</span>
+        <div class="logos"><span>LOGO ACTUARIA</span><span>LOGO REMAR</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="narr">Cierre de marca y acción inmediata: el claim CREE + ACTÚA aterrizado en la causa. Tarjeta 100% motion graphics — no lleva foto.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"Cree en ellos. Actúa por ellos. Responde la encuesta y conviértete en padrino… o madrina."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v">Claim + botón de encuesta + logos Actuaria y REMAR</span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Claim en dos golpes (CREE → ACTÚA); botón pulsa; resolución musical cálida.</span></div>
     </div>
   </section>
-
 </div>
 
-<footer>
-  Prompts v1 · 2026-08-06 · compartir solo con el equipo del proyecto<br>
-  Los nombres de los niños se omiten deliberadamente en esta versión (protección de menores)
-</footer>
+<div class="notes">
+  <h2>Notas de producción</h2>
+  <ul>
+    <li><b>Pipeline:</b> VO grabada → animación en Remotion → subtítulos → render 16:9 (+ corte vertical opcional para WhatsApp).</li>
+    <li><b>Música:</b> piano cálido + cuerdas (licencia libre), crescendo en ESC 6, resolución en ESC 8. La VO manda; la música acompaña a −18 dB aprox.</li>
+    <li><b>ESC 6:</b> candidata a reemplazo por foto real de las galletas de la fundación (es su producto real).</li>
+  </ul>
+  <div class="warn">
+    <ul>
+      <li><b>⚠️ Protección de menores:</b> en esta versión compartible los niños aparecen por su inicial y ninguna imagen muestra rostros identificables (los frames son generados, sin niños reales). El uso de nombres completos, fotos o videos reales requiere autorización escrita de la fundación.</li>
+    </ul>
+  </div>
 </div>
 
-<script>
-(function(){
-  var BASE = document.getElementById("pb-base").childNodes[0].textContent.trim();
-  document.addEventListener("click", function(e){
-    var b = e.target.closest(".copybtn");
-    if (!b) return;
-    var box = document.getElementById(b.dataset.copy);
-    var txt = box.childNodes[0].textContent.trim();
-    if (b.dataset.base === "1") txt = BASE + ", " + txt;
-    function done(){
-      var old = b.textContent;
-      b.textContent = "¡Copiado!";
-      b.classList.add("ok");
-      setTimeout(function(){ b.textContent = old; b.classList.remove("ok"); }, 1600);
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(txt).then(done, function(){ fallback(txt); done(); });
-    } else { fallback(txt); done(); }
-    function fallback(t){
-      var ta = document.createElement("textarea");
-      ta.value = t; document.body.appendChild(ta); ta.select();
-      try { document.execCommand("copy"); } catch(err){}
-      ta.remove();
-    }
-  });
-})();
-</script>
+<footer>Storyboard v2 · 2026-08-06 · Actuagency · compartir solo con el equipo del proyecto</footer>
+</div>
 </body>
 </html>
