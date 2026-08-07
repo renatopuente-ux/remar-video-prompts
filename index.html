@@ -50,6 +50,11 @@ header .sub{ font-size:14.5px; color:var(--muted); margin-top:6px; max-width:720
 .brandcard .btn{ display:inline-block; margin-top:14px; background:var(--orange); color:#fff; font-size:12px; font-weight:800; padding:9px 20px; border-radius:999px; }
 .brandcard .logos{ display:flex; gap:14px; justify-content:center; margin-top:16px; }
 .brandcard .logos span{ background:rgba(255,255,255,.22); border-radius:5px; padding:4px 14px; font-size:9px; font-weight:800; color:#fff; letter-spacing:.6px; }
+.quotecard{ background:linear-gradient(160deg,#FDF7EE,#F3E7D3); display:grid; place-items:center; }
+.quotecard .in{ text-align:center; padding:26px 34px; max-width:92%; }
+.quotecard .qm{ font-size:44px; line-height:.6; color:var(--orange); font-weight:800; }
+.quotecard .q{ font-size:clamp(13px,1.7vw,17px); font-weight:700; font-style:italic; color:#4A3517; line-height:1.55; margin-top:10px; }
+.quotecard .who{ font-size:11.5px; font-weight:800; letter-spacing:.8px; text-transform:uppercase; color:#8A6A3B; margin-top:12px; }
 
 .body{ padding:14px 20px 18px; }
 .narr{ font-size:13.5px; color:var(--ink); line-height:1.6; background:rgba(47,95,204,.07); border-left:3px solid var(--indigo); border-radius:0 10px 10px 0; padding:9px 13px; margin-bottom:11px; font-weight:600; }
@@ -73,24 +78,24 @@ footer{ text-align:center; margin-top:30px; font-size:12px; color:rgba(0,9,51,.4
 <div class="wrap">
 
 <header>
-  <span class="chip">Storyboard v2 · frames generados + guion con locución</span>
+  <span class="chip">Storyboard v3 · feedback de supervisión aplicado</span>
   <h1>Video Interno Emotivo — Fundación REMAR</h1>
   <p class="sub">Campaña "Apadrina a un niño": kit escolar + carta de cariño. El video se envía a los colaboradores de Actuaria junto al link de la encuesta de apadrinamiento.</p>
   <div class="meta">
-    <span>⏱ ~78 s</span><span>16:9</span><span>🎙 Con voz en off + subtítulos</span><span>8 escenas</span><span>Cierre: CREE + ACTÚA</span>
+    <span>⏱ ~90 s</span><span>16:9</span><span>🎙 Con voz en off + subtítulos</span><span>9 escenas</span><span>30 niños · 2 hogares</span><span>Cierre: CREE + ACTÚA</span>
   </div>
 </header>
 
 <section class="vo-intro">
   <h2>🎙 Locución</h2>
-  <p>Voz cálida y cercana (femenina, LATAM neutro — candidata ideal: la coordinadora del hogar, por autenticidad), ritmo pausado sobre piano con crescendo en la escena 6. El <b>texto en pantalla es de apoyo</b> (frases clave), no duplica la locución. El video lleva <b>subtítulos</b>: parte del equipo lo verá sin audio. <b>En esta versión compartible los niños aparecen por su inicial</b>; los nombres completos constan en el guion interno de producción.</p>
+  <p>Voz cálida y cercana (femenina, LATAM neutro), ritmo pausado sobre piano con crescendo en la escena 6. La escena 7 es el <b>testimonio de Gisela Coronado</b> — idealmente con su <b>voz real</b>. El <b>texto en pantalla es de apoyo</b> y el video lleva <b>subtítulos</b> (parte del equipo lo verá sin audio). <b>Uso de los nombres de los niños autorizado</b> (supervisión, 07-ago-2026).</p>
 </section>
 
 <div class="grid">
 
   <section class="frame">
     <div class="head"><span class="num">1</span><span class="t">El recuerdo</span><span class="tc">0:00–0:07</span></div>
-    <div class="imgbox"><img src="frames/esc1-recuerdo.jpg" alt="Útiles escolares con luz cálida" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc1-recuerdo.jpg</div></div>
+    <div class="imgbox"><img src="frames/esc1-recuerdo.jpg" alt="Útiles escolares con luz cálida" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ frames/esc1-recuerdo.jpg</div></div>
     <div class="body">
       <div class="narr">Abrimos en el recuerdo del espectador: todos fuimos ese niño con útiles nuevos. La empatía nace de su propia memoria, no de la lástima.</div>
       <div class="vo"><span class="mic">🎙</span><p>"¿Recuerdas la emoción de estrenar útiles… un primer día de clases?"</p></div>
@@ -100,84 +105,101 @@ footer{ text-align:center; margin-top:30px; font-size:12px; color:rgba(0,9,51,.4
   </section>
 
   <section class="frame">
-    <div class="head"><span class="num">2</span><span class="t">El hogar</span><span class="tc">0:07–0:15</span></div>
-    <div class="imgbox"><img src="frames/esc2-hogar.jpg" alt="Hogar andino al amanecer con columpio" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc2-hogar.jpg</div></div>
+    <div class="head"><span class="num">2</span><span class="t">Los hogares</span><span class="tc">0:07–0:16</span></div>
+    <div class="imgbox"><img src="frames/esc2-hogar.jpg" alt="Hogar andino al amanecer con columpio" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ frames/esc2-hogar.jpg</div></div>
     <div class="body">
-      <div class="narr">Del recuerdo íntimo a un lugar real: el hogar en la Mitad del Mundo. El columpio vacío y el "Bienvenidos" dicen refugio sin explicarlo.</div>
-      <div class="vo"><span class="mic">🎙</span><p>"En la Mitad del Mundo hay un hogar donde veinticinco historias comienzan de nuevo: la Fundación REMAR, más de treinta años cuidando a la niñez."</p></div>
-      <div class="row"><span class="k">En pantalla</span><span class="v">Chip: <b>Fundación REMAR Mitad del Mundo · +30 años por la niñez</b></span></div>
+      <div class="narr">Del recuerdo íntimo a los lugares reales: los DOS hogares de la fundación. El columpio vacío y el "Bienvenidos" dicen refugio sin explicarlo.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"En la Mitad del Mundo y en La Gasca hay dos hogares donde treinta historias comienzan de nuevo: son de la Fundación REMAR, más de treinta años cuidando a la niñez."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v">Chip: <b>Fundación REMAR · Hogares Mitad del Mundo y La Gasca · +30 años</b></span></div>
       <div class="row"><span class="k">Animación</span><span class="v">Ken Burns suave hacia la puerta abierta; chip sube desde abajo.</span></div>
     </div>
   </section>
 
   <section class="frame">
-    <div class="head"><span class="num">3</span><span class="t">Las realidades</span><span class="tc">0:15–0:25</span></div>
-    <div class="imgbox"><img src="frames/esc3-mochilas.jpg" alt="Mochilas colgadas y zapatos escolares en fila" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc3-mochilas.jpg</div></div>
+    <div class="head"><span class="num">3</span><span class="t">Las realidades</span><span class="tc">0:16–0:26</span></div>
+    <div class="imgbox"><img src="frames/esc3-mochilas.jpg" alt="Mochilas colgadas y zapatos escolares en fila" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ frames/esc3-mochilas.jpg</div></div>
     <div class="body">
       <div class="narr">La realidad contada con objetos: presencia a través de la ausencia. Cada mochila es un niño; la naranja guía el ojo (y la marca).</div>
-      <div class="vo"><span class="mic">🎙</span><p>"Algunos de estos niños perdieron a sus padres. Otros no pueden estar con ellos. Hoy, diecisiete estudian gracias a este hogar."</p></div>
-      <div class="row"><span class="k">En pantalla</span><span class="v"><b>17 niños y adolescentes</b> estudian hoy</span></div>
-      <div class="row"><span class="k">Animación</span><span class="v">Travelling lateral lento por las mochilas; el contador "17" sube con la locución.</span></div>
+      <div class="vo"><span class="mic">🎙</span><p>"Algunos de estos niños perdieron a sus padres. Otros no pueden estar con ellos. Hoy, los treinta estudian gracias a estos hogares."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v"><b>30 niños y adolescentes</b> estudian hoy</span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Travelling lateral lento por las mochilas; el contador "30" sube con la locución.</span></div>
     </div>
   </section>
 
   <section class="frame">
-    <div class="head"><span class="num">4</span><span class="t">C. · 8 años</span><span class="tc">0:25–0:37</span></div>
-    <div class="imgbox"><img src="frames/esc4-futbolista.jpg" alt="Niño de espaldas pateando un balón; cuaderno de planas en primer plano" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc4-futbolista.jpg</div></div>
+    <div class="head"><span class="num">4</span><span class="t">Cristopher · 8 años</span><span class="tc">0:26–0:38</span></div>
+    <div class="imgbox"><img src="frames/esc4-futbolista.jpg" alt="Niño de espaldas pateando un balón; cuaderno de planas en primer plano" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ frames/esc4-futbolista.jpg</div></div>
     <div class="body">
-      <div class="narr">Primera historia con nombre. El cuaderno con estrellas y "¡Muy bien!" en primer plano ES su superación; el balón al fondo, su sueño.</div>
-      <div class="vo"><span class="mic">🎙</span><p>"C. tiene ocho años. Hace uno, no sabía leer ni escribir. Hoy pasa a tercero de básica… y sueña con ser futbolista."</p></div>
-      <div class="row"><span class="k">En pantalla</span><span class="v">8 años · pasa a <b>3.º de básica</b> ⚽</span></div>
-      <div class="row"><span class="k">Animación</span><span class="v">Foco pasa del cuaderno (nítido) al niño (fondo); el ⚽ del texto rebota al entrar.</span></div>
+      <div class="narr">Primera historia con nombre. El cuaderno con estrellas y "¡Muy bien!" ES su superación; juega fútbol como cualquier niño… y sueña en grande.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"Cristopher tiene ocho años. Hace uno, no sabía leer ni escribir. Hoy pasa a tercero de básica… y sueña con ser médico, para salvar vidas."</p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v">8 años · <b>futuro médico</b> 🩺</span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Foco pasa del cuaderno (nítido) al niño jugando (fondo); el 🩺 del texto late suave al entrar.</span></div>
     </div>
   </section>
 
   <section class="frame">
-    <div class="head"><span class="num">5</span><span class="t">D. · 4 años</span><span class="tc">0:37–0:48</span></div>
-    <div class="imgbox"><img src="frames/esc5-rompecabezas.jpg" alt="Manos de niña colocando la última pieza de un rompecabezas de sol; muñeca andina al lado" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc5-rompecabezas.jpg</div></div>
+    <div class="head"><span class="num">5</span><span class="t">Doménica · 4 años</span><span class="tc">0:38–0:49</span></div>
+    <div class="imgbox"><img src="frames/esc5-rompecabezas.jpg" alt="Manos de niña colocando la última pieza de un rompecabezas de sol; muñeca andina al lado" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ frames/esc5-rompecabezas.jpg</div></div>
     <div class="body">
       <div class="narr">El corazón del video: su vida rearmándose pieza a pieza. La última pieza del sol entra exactamente cuando la locución dice "por primera vez".</div>
-      <div class="vo"><span class="mic">🎙</span><p>"D. tiene cuatro. Llegó hace poco con sus tres hermanitas. Este año empieza la escuela… por primera vez."</p></div>
+      <div class="vo"><span class="mic">🎙</span><p>"Doménica tiene cuatro. Llegó hace poco con sus tres hermanitas. Este año empieza la escuela… por primera vez."</p></div>
       <div class="row"><span class="k">En pantalla</span><span class="v">4 años · <b>su primer año escolar</b></span></div>
       <div class="row"><span class="k">Animación</span><span class="v">Las piezas encajan una a una (stop-motion sutil); este frame es la resolución.</span></div>
     </div>
   </section>
 
   <section class="frame">
-    <div class="head"><span class="num">6</span><span class="t">La dignidad · las galletas</span><span class="tc">0:48–0:58</span></div>
-    <div class="imgbox"><img src="frames/esc6-galletas.jpg" alt="Manos adultas y pequeñas amasando juntas; bandeja humeante" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc6-galletas.jpg</div></div>
+    <div class="head"><span class="num">6</span><span class="t">La dignidad · las galletas</span><span class="tc">0:49–0:59</span></div>
+    <div class="imgbox"><img src="frames/esc6-galletas.jpg" alt="Manos adultas y pequeñas amasando juntas; bandeja humeante" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ frames/esc6-galletas.jpg</div></div>
     <div class="body">
       <div class="narr">Cuatro manos amasando juntas: no piden, trabajan. El giro del video — la ayuda no es caridad, es sumarse a un esfuerzo que ya existe.</div>
-      <div class="vo"><span class="mic">🎙</span><p>"Para sostener el hogar, hornean y venden galletas tradicionales. Hacen todo lo que pueden… pero no tienen que hacerlo solos."</p></div>
+      <div class="vo"><span class="mic">🎙</span><p>"Para sostener los hogares, hornean y venden galletas tradicionales. Hacen todo lo que pueden… pero no tienen que hacerlo solos."</p></div>
       <div class="row"><span class="k">En pantalla</span><span class="v">aplanchados · bizcochitos · chabelitas · melvas <em>(etiquetas)</em></span></div>
-      <div class="row"><span class="k">Animación</span><span class="v">Etiquetas aparecen al ritmo de la locución; la música crece (entra cuerda).</span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">Etiquetas al ritmo de la locución; la música crece (entra cuerda).</span></div>
     </div>
   </section>
 
   <section class="frame">
-    <div class="head"><span class="num">7</span><span class="t">La propuesta</span><span class="tc">0:58–1:10</span></div>
-    <div class="imgbox"><img src="frames/esc7-kit.jpg" alt="Kit escolar completo y manos de niño sosteniendo una carta" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ pendiente: frames/esc7-kit.jpg</div></div>
+    <div class="head"><span class="num">7</span><span class="t">El testimonio · Gisela</span><span class="tc">0:59–1:10</span></div>
+    <div class="imgbox quotecard">
+      <div class="in">
+        <div class="qm">"</div>
+        <div class="q">Seguimos adelante con fe, y con profundo agradecimiento hacia quienes se suman a esta causa. Cada aporte transforma vidas.</div>
+        <div class="who">Gisela Coronado · Coordinadora del hogar · Fundación REMAR</div>
+      </div>
+    </div>
     <div class="body">
-      <div class="narr">El payoff: el kit en paleta Actuaria y unas manos pequeñas ya recibiendo la carta — el espectador ve el resultado de su gesto antes de hacerlo.</div>
-      <div class="vo"><span class="mic">🎙</span><p>"Este regreso a clases, apadrina a uno de ellos: un kit escolar completo, y una carta escrita por ti. Tu letra puede ser el primer 'alguien piensa en mí' que reciba."</p></div>
+      <div class="narr">La voz de quien vive la obra a diario: el testimonio (del documento de la fundación) valida todo lo anterior y abre la puerta a la acción.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"Seguimos adelante con fe, y con profundo agradecimiento hacia quienes se suman a esta causa. Cada aporte transforma vidas." <em>(idealmente la voz real de Gisela)</em></p></div>
+      <div class="row"><span class="k">En pantalla</span><span class="v">La cita sobre fondo cálido + <b>Gisela Coronado · coordinadora del hogar</b></span></div>
+      <div class="row"><span class="k">Animación</span><span class="v">La cita se escribe con suavidad; música en suspenso cálido. Cierra en "…transforma vidas".</span></div>
+    </div>
+  </section>
+
+  <section class="frame">
+    <div class="head"><span class="num">8</span><span class="t">La propuesta</span><span class="tc">1:10–1:22</span></div>
+    <div class="imgbox"><img src="frames/esc7-kit.jpg" alt="Kit escolar completo y manos de niño sosteniendo una carta" onerror="this.parentElement.classList.add('missing')"><div class="pend">⏳ frames/esc7-kit.jpg</div></div>
+    <div class="body">
+      <div class="narr">Transición directa al corazón: del "transforma vidas" de Gisela al "tú puedes transformar una". El kit en paleta Actuaria y unas manos pequeñas ya recibiendo la carta.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"Este regreso a clases, tú puedes transformar una: apadrina a uno de los treinta. Un kit escolar completo… y una carta escrita por ti. Tu apoyo puede ser el inicio de una gran historia en su vida."</p></div>
       <div class="row"><span class="k">En pantalla</span><span class="v"><b>KIT ESCOLAR + TU CARTA</b></span></div>
       <div class="row"><span class="k">Animación</span><span class="v">Los útiles se ordenan hacia la mochila; la carta es lo último en aparecer, sostenida.</span></div>
     </div>
   </section>
 
   <section class="frame">
-    <div class="head"><span class="num">8</span><span class="t">CTA · Cree y Actúa</span><span class="tc">1:10–1:18</span></div>
+    <div class="head"><span class="num">9</span><span class="t">CTA · Cree y Actúa</span><span class="tc">1:22–1:30</span></div>
     <div class="imgbox brandcard">
       <div class="in">
         <div class="cl">Cree en ellos. Actúa por ellos.</div>
-        <div class="s2">Responde la encuesta y conviértete en padrino o madrina 💙</div>
+        <div class="s2">Responde esta encuesta y apadrina esta causa 💙</div>
         <span class="btn">IR A LA ENCUESTA →</span>
         <div class="logos"><span>LOGO ACTUARIA</span><span>LOGO REMAR</span></div>
       </div>
     </div>
     <div class="body">
-      <div class="narr">Cierre de marca y acción inmediata: el claim CREE + ACTÚA aterrizado en la causa. Tarjeta 100% motion graphics — no lleva foto.</div>
-      <div class="vo"><span class="mic">🎙</span><p>"Cree en ellos. Actúa por ellos. Responde la encuesta y conviértete en padrino… o madrina."</p></div>
+      <div class="narr">Cierre de marca y acción inmediata: el claim CREE + ACTÚA aterrizado en la causa. Tarjeta 100% motion graphics.</div>
+      <div class="vo"><span class="mic">🎙</span><p>"Cree en ellos. Actúa por ellos. Responde esta encuesta y apadrina esta causa."</p></div>
       <div class="row"><span class="k">En pantalla</span><span class="v">Claim + botón de encuesta + logos Actuaria y REMAR</span></div>
       <div class="row"><span class="k">Animación</span><span class="v">Claim en dos golpes (CREE → ACTÚA); botón pulsa; resolución musical cálida.</span></div>
     </div>
@@ -187,18 +209,19 @@ footer{ text-align:center; margin-top:30px; font-size:12px; color:rgba(0,9,51,.4
 <div class="notes">
   <h2>Notas de producción</h2>
   <ul>
-    <li><b>Pipeline:</b> VO grabada → animación en Remotion → subtítulos → render 16:9 (+ corte vertical opcional para WhatsApp).</li>
-    <li><b>Música:</b> piano cálido + cuerdas (licencia libre), crescendo en ESC 6, resolución en ESC 8. La VO manda; la música acompaña a −18 dB aprox.</li>
+    <li><b>Pipeline:</b> VO grabada (+ audio de Gisela para ESC 7) → animación en Remotion → subtítulos → render 16:9 (+ corte vertical opcional).</li>
+    <li><b>Música:</b> piano cálido + cuerdas (licencia libre), crescendo en ESC 6, suspenso cálido en ESC 7, resolución en ESC 9. VO manda; música a −18 dB aprox.</li>
     <li><b>ESC 6:</b> candidata a reemplazo por foto real de las galletas de la fundación (es su producto real).</li>
+    <li><b>Datos v3 (supervisión):</b> 30 niños entre los dos hogares (Mitad del Mundo y La Gasca); marca general "Fundación REMAR".</li>
   </ul>
   <div class="warn">
     <ul>
-      <li><b>⚠️ Protección de menores:</b> en esta versión compartible los niños aparecen por su inicial y ninguna imagen muestra rostros identificables (los frames son generados, sin niños reales). El uso de nombres completos, fotos o videos reales requiere autorización escrita de la fundación.</li>
+      <li><b>Protección de menores:</b> uso de los nombres <b>autorizado</b> (supervisión, 07-ago-2026 — se recomienda respaldo escrito de la fundación en el expediente). Las imágenes son generadas, sin niños reales; ningún rostro identificable.</li>
     </ul>
   </div>
 </div>
 
-<footer>Storyboard v2 · 2026-08-06 · Actuagency · compartir solo con el equipo del proyecto</footer>
+<footer>Storyboard v3 · 2026-08-07 · Actuagency · compartir solo con el equipo del proyecto</footer>
 </div>
 </body>
 </html>
